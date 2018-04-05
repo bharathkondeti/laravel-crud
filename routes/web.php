@@ -19,6 +19,10 @@ Route::get('/hello', function () {
     return 'Hello World!!!';
 });
 
+Route::get('/about', function () {
+    return 'About us page';
+});
+
 Route::get('/welcome', 'WelcomeContoller@index');
 
 //Passing Variables
