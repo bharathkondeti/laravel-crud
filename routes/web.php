@@ -23,6 +23,14 @@ Route::get('/about', function () {
     return 'About us page';
 });
 
+Route::get('/timezone', function () {
+    return config('app.timezone');
+});
+
+Route::get('/login', function () {
+    return 'Login';
+});
+
 Route::get('/welcome', 'WelcomeContoller@index');
 
 //Passing Variables
@@ -34,3 +42,11 @@ Route::get('/var/{id}', function($id) {
 Route::get('/test/test1/test2/test3', function () {
   return route('test.show');
 })->name('test.show');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/create/employee','EmployeeController@create');
+
+Route::post('/create/employee','EmployeeController@save');
